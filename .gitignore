@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
@@ -40,3 +41,15 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+=======
+# Visual Studio
+.vs/
+
+# .NET
+bin/
+obj/
+
+# Angular
+node_modules/
+dist/
+>>>>>>> b79012ecff9c50a2a947a6bfab64d7019cec5ddb
