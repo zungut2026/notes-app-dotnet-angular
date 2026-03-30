@@ -1,0 +1,40 @@
+<div class="create-note-container">
+  <h2>Create Note</h2>
+
+  <form [formGroup]="noteForm" (ngSubmit)="submit()">
+
+   
+    <div>
+      <label>Title</label>
+      <input type="text" formControlName="title" />
+    </div>
+
+    <div>
+      <label>Content</label>
+      <textarea formControlName="content"></textarea>
+    </div>
+
+  
+    <div>
+      <label>Note Type</label>
+      <select formControlName="noteTypeId">
+        <option value="">Select Type</option>
+        <option *ngFor="let type of [1,2,3]" [value]="type">
+          {{ type }}
+        </option>
+      </select>
+    </div>
+
+    <div>
+      <label>Tags</label>
+      <input type="text" placeholder="Comma separated tags"
+        (change)="onTagsChange($event)" />
+    </div>
+
+ 
+<button type="submit" [disabled]="noteForm.invalid || isSubmitting">
+  {{ isSubmitting ? 'Saving...' : 'Create Note' }}
+</button>
+
+  </form>
+</div>

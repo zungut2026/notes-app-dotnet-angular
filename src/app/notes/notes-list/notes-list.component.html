@@ -1,0 +1,16 @@
+<h2>Notes</h2>
+
+<div *ngIf="isLoading">Loading...</div>
+
+<div *ngIf="!isLoading && notes.length > 0">
+  <div *ngFor="let note of notes" class="note-card">
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.noteDetails }}</p>
+    <small>Posted by: {{ note.createdBy }}</small><br>
+    <small>{{ note.createdDate | date }}</small>
+  </div>
+</div>
+
+<div *ngIf="!isLoading && notes.length === 0">
+  No notes found
+</div>
